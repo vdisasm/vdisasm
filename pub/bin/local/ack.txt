@@ -1,0 +1,22 @@
+Acknowledgements
+
+-----------------------------------------------
+
+mediana disassembler engine
+by mikae
+
+http://mediana.sourceforge.net/
+
+-----------------------------------------------
+
+Silk icon set 1.3
+
+Mark James
+http://www.famfamfam.com/lab/icons/silk/
+
+-----------------------------------------------
+
+OGDF - Open Graph Drawing Framework
+http://www.ogdf.net/
+
+-----------------------------------------------

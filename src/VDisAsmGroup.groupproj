@@ -1,0 +1,170 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{49E09B63-C7E2-4710-BCED-6C33CB8F7B87}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="gui-vcl\gui.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="core\core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="builder-typelib-std\BuildStdTypelib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="cpu\x86_mediana\x86_mediana.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="typeproviders\std\tp_std.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="loaders\Binary\LoaderBinary.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="loaders\ELF\LoaderELF.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="loaders\PortableExecutable\LoaderPE.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="gui">
+        <MSBuild Projects="gui-vcl\gui.dproj"/>
+    </Target>
+    <Target Name="gui:Clean">
+        <MSBuild Projects="gui-vcl\gui.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gui:Make">
+        <MSBuild Projects="gui-vcl\gui.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="core">
+        <MSBuild Projects="core\core.dproj"/>
+    </Target>
+    <Target Name="core:Clean">
+        <MSBuild Projects="core\core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="core:Make">
+        <MSBuild Projects="core\core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BuildStdTypelib">
+        <MSBuild Projects="builder-typelib-std\BuildStdTypelib.dproj"/>
+    </Target>
+    <Target Name="BuildStdTypelib:Clean">
+        <MSBuild Projects="builder-typelib-std\BuildStdTypelib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuildStdTypelib:Make">
+        <MSBuild Projects="builder-typelib-std\BuildStdTypelib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="x86_mediana">
+        <MSBuild Projects="cpu\x86_mediana\x86_mediana.dproj"/>
+    </Target>
+    <Target Name="x86_mediana:Clean">
+        <MSBuild Projects="cpu\x86_mediana\x86_mediana.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="x86_mediana:Make">
+        <MSBuild Projects="cpu\x86_mediana\x86_mediana.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="tp_std">
+        <MSBuild Projects="typeproviders\std\tp_std.dproj"/>
+    </Target>
+    <Target Name="tp_std:Clean">
+        <MSBuild Projects="typeproviders\std\tp_std.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tp_std:Make">
+        <MSBuild Projects="typeproviders\std\tp_std.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LoaderBinary">
+        <MSBuild Projects="loaders\Binary\LoaderBinary.dproj"/>
+    </Target>
+    <Target Name="LoaderBinary:Clean">
+        <MSBuild Projects="loaders\Binary\LoaderBinary.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LoaderBinary:Make">
+        <MSBuild Projects="loaders\Binary\LoaderBinary.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LoaderELF">
+        <MSBuild Projects="loaders\ELF\LoaderELF.dproj"/>
+    </Target>
+    <Target Name="LoaderELF:Clean">
+        <MSBuild Projects="loaders\ELF\LoaderELF.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LoaderELF:Make">
+        <MSBuild Projects="loaders\ELF\LoaderELF.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LoaderPE">
+        <MSBuild Projects="loaders\PortableExecutable\LoaderPE.dproj"/>
+    </Target>
+    <Target Name="LoaderPE:Clean">
+        <MSBuild Projects="loaders\PortableExecutable\LoaderPE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LoaderPE:Make">
+        <MSBuild Projects="loaders\PortableExecutable\LoaderPE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="gui;core;BuildStdTypelib;x86_mediana;tp_std;LoaderBinary;LoaderELF;LoaderPE"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="gui:Clean;core:Clean;BuildStdTypelib:Clean;x86_mediana:Clean;tp_std:Clean;LoaderBinary:Clean;LoaderELF:Clean;LoaderPE:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="gui:Make;core:Make;BuildStdTypelib:Make;x86_mediana:Make;tp_std:Make;LoaderBinary:Make;LoaderELF:Make;LoaderPE:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='win32 release'">
+        <BuildGroupProject Include="gui-vcl\gui.dproj">
+            <ProjectGuid>{FE1217AB-F4B1-4D9B-8F2B-5EE7C6C2B54E}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="loaders\ELF\LoaderELF.dproj">
+            <ProjectGuid>{55C2D8C7-81C5-425B-B823-CF45C1C7D4BA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="typeproviders\std\tp_std.dproj">
+            <ProjectGuid>{6C2DCBE3-5BE2-4880-9257-7AC1F89AE234}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="core\core.dproj">
+            <ProjectGuid>{3A4C6EA2-89D8-406F-BC30-0D07BACCDEA2}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="builder-typelib-std\BuildStdTypelib.dproj">
+            <ProjectGuid>{4DE30CDF-8874-4D9F-AC37-6D1575DBD100}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="loaders\PortableExecutable\LoaderPE.dproj">
+            <ProjectGuid>{6F4A24AF-9208-4900-BD61-75D8C6E0578D}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="loaders\Binary\LoaderBinary.dproj">
+            <ProjectGuid>{77540F5D-2DD9-4036-9061-A6B03269AB05}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="cpu\x86_mediana\x86_mediana.dproj">
+            <ProjectGuid>{66289650-672A-4CC5-B835-49CBBE91B9F3}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

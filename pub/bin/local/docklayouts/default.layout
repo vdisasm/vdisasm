@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitelist>
+	<site id="mainsite">
+		<zone kind="VERT">
+			<zone kind="HORZ" size="888" dsize="0.822222222222222">
+				<zone kind="TABS" activetab="0" size="1614" dsize="0.848580441640379" isspace="1">
+					<zone kind="PANEL" id="Disassembler" visible="1"/>
+				</zone>
+				<zone kind="PANEL" id="Decompiler" visible="0" size="446" dsize="0.235399804385729"/>
+				<zone kind="VERT" size="288" dsize="0.151419558359621">
+					<zone kind="PANEL" id="References" visible="1" size="126" dsize="0.143576826196474"/>
+					<zone kind="TABS" activetab="3" size="582" dsize="0.664987405541561">
+						<zone kind="PANEL" id="Exports" visible="1"/>
+						<zone kind="PANEL" id="Imports" visible="1"/>
+						<zone kind="PANEL" id="Names" visible="1"/>
+						<zone kind="PANEL" id="Problems" visible="1"/>
+						<zone kind="PANEL" id="Sections" visible="1"/>
+					</zone>
+					<zone kind="TABS" activetab="0" size="168" dsize="0.191435768261965">
+						<zone kind="PANEL" id="Watches" visible="1"/>
+						<zone kind="PANEL" id="Breakpoints" visible="0"/>
+					</zone>
+				</zone>
+			</zone>
+			<zone kind="HORZ" size="192" dsize="0.177777777777778">
+				<zone kind="PANEL" id="Hex" visible="1" size="1403" dsize="0.737644584647739"/>
+				<zone kind="PANEL" id="Messages" visible="1" size="499" dsize="0.262355415352261"/>
+			</zone>
+		</zone>
+	</site>
+	<application left="-8" top="-8" width="1936" height="1176" disasm_font_size="13"/>
+</sitelist>
